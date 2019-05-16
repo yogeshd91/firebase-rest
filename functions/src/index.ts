@@ -102,6 +102,7 @@ app.put('/players/:id', async (request, response) => {
         .set(data, { merge: true });
 
     response.json({
+        error: false,
         id: playerId,
         data
     })
@@ -126,7 +127,8 @@ app.delete('/players/:id', async (request, response) => {
         .delete();
 
     response.json({
-        id: playerId,
+        error: false,
+        message: 'Player deleted'
     })
 
 
